@@ -1,4 +1,4 @@
-# Flappy Bird
+<!--# Flappy Bird
 
 Flappy Bird Clone is a clone of the mobile game, created to learn game development.
 
@@ -10,7 +10,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## Screenshot
 
-<!--![asd](./.screens/image_01.png) ![asd](./.screens/image_02.png)-->
+![asd](./.screens/image_01.png) ![asd](./.screens/image_02.png)
 
 ## Features
 
@@ -28,3 +28,4 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [] Animation on attack
 - [] Stats bars on monsters
 - [] Ranged monsters and weapons
+- -->

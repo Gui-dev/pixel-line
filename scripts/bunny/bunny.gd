@@ -13,7 +13,7 @@ var armed := false
 var can_attack := true
 var jump_count: int = 0
 var velocity: Vector2
-export(PackedScene) var projectile
+export(PackedScene) var Projectile
 export(PackedScene) var hit_effect
 export(PackedScene) var death_effect
 export(bool) var attacking
@@ -81,7 +81,12 @@ func verify_direction() -> void:
 
 
 func spawn_projectile() -> void:
-  pass
+  var projectile: Projectile = Projectile.instance()
+  if texture.flip_h:
+    projectile.direction = -1
+    
+  projectile.global_position = spawn.global_position
+  get_tree().root.call_deferred('add_child', projectile)
   
 
 func change_sprite() -> void:

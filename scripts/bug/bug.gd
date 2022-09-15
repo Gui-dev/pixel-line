@@ -4,7 +4,7 @@ class_name Bug
 
 var velocity: Vector2
 var direction = 1
-var player_ref: Bunny = null
+var player_ref = null
 onready var texture: Sprite = $texture
 onready var raycast: RayCast2D = $raycast
 export(PackedScene) var hit_effect
@@ -44,9 +44,9 @@ func spawn_effect(target_effect: PackedScene) -> void:
   effect.global_position = global_position
   get_tree().root.call_deferred('add_child', effect)
 
-func _on_detection_area_body_entered(body: Bunny) -> void:
+func _on_detection_area_body_entered(body) -> void:
   player_ref = body
 
 
-func _on_detection_area_body_exited(_body: Bunny) -> void:
+func _on_detection_area_body_exited(_body) -> void:
   player_ref = null

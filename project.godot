@@ -15,9 +15,19 @@ _global_script_classes=[ {
 "path": "res://scripts/management/background.gd"
 }, {
 "base": "KinematicBody2D",
+"class": "Bug",
+"language": "GDScript",
+"path": "res://scripts/bug/bug.gd"
+}, {
+"base": "KinematicBody2D",
 "class": "Bunny",
 "language": "GDScript",
 "path": "res://scripts/bunny/bunny.gd"
+}, {
+"base": "AnimatedSprite",
+"class": "Effect",
+"language": "GDScript",
+"path": "res://scripts/effects/effect.gd"
 }, {
 "base": "Area2D",
 "class": "Projectile",
@@ -31,7 +41,9 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Background": "",
+"Bug": "",
 "Bunny": "",
+"Effect": "",
 "Projectile": "",
 "Weapon": ""
 }

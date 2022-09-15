@@ -68,7 +68,25 @@ func animate() -> void:
     animation.play('run')
   elif not attacking:
     animation.play('idle')
+
+
+func spawn_effect(target_effect: PackedScene) -> void:
+  var effect = target_effect.instance()
+  effect.global_position = global_position
+  get_tree().root.call_deferred('add_child', effect)    
+
+
+func update_health(body: Bug) -> void:
+  if body is Bug:
+    hitbox.set_deferred('monitoring', false)
+    hitbox_timer.start(invulnerability_time)
+    health -= body.damage
     
+    if health <= 0:
+      spawn_effect(death_effect)
+      queue_free()
+    else:
+      spawn_effect(hit_effect)
 
 
 func verify_direction() -> void:
@@ -96,3 +114,7 @@ func change_sprite() -> void:
 
 func _on_attack_timer_timeout() -> void:
   can_attack = true
+
+
+func _on_hit_timeout() -> void:
+  hitbox.set_deferred('monitoring', true)

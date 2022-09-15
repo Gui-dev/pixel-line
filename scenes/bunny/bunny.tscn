@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/bunny/unarmed.png" type="Texture" id=1]
 [ext_resource path="res://scripts/bunny/bunny.gd" type="Script" id=2]
 [ext_resource path="res://scenes/bunny/projectile.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/effects/death_effect.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/effects/hit.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 4, 5.5 )
@@ -122,6 +124,14 @@ extents = Vector2( 4, 5.5 )
 collision_layer = 2
 script = ExtResource( 2 )
 Projectile = ExtResource( 3 )
+hit_effect = ExtResource( 5 )
+death_effect = ExtResource( 4 )
+attack_cooldown = 1.0
+invulnerability_time = 1.0
+speed = 90
+jump_speed = -180
+fall_speed = 360
+health = 5
 
 [node name="texture" type="Sprite" parent="."]
 texture = ExtResource( 1 )
@@ -146,6 +156,8 @@ anims/run = SubResource( 5 )
 current = true
 
 [node name="hitbox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
 
 [node name="collision" type="CollisionShape2D" parent="hitbox"]
 position = Vector2( 0, 2.5 )
@@ -154,3 +166,5 @@ shape = SubResource( 7 )
 [node name="timer" type="Timer" parent="hitbox"]
 
 [connection signal="timeout" from="attack_timer" to="." method="_on_attack_timer_timeout"]
+[connection signal="body_entered" from="hitbox" to="." method="update_health"]
+[connection signal="timeout" from="hitbox/timer" to="." method="_on_hit_timeout"]

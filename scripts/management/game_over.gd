@@ -11,4 +11,4 @@ func _ready() -> void:
 
 
 func _on_back_button_pressed() -> void:
-  var _reload = get_tree().change_scene("res://scenes/management/level.tscn")
+  var _reload = get_tree().change_scene('res://scenes/management/menu.tscn')

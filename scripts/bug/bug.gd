@@ -28,6 +28,7 @@ func update_health(amount) -> void:
   
   if health <= 0:
     spawn_effect(death_effect)
+    Global.enemies_count += 1
     queue_free()
   else:
     spawn_effect(hit_effect)

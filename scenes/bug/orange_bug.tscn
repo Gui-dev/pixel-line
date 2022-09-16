@@ -20,5 +20,5 @@ position = Vector2( 0, 4.5 )
 shape = SubResource( 1 )
 
 [node name="raycast" parent="." index="4"]
-position = Vector2( 4, 3 )
+position = Vector2( 8, 5 )
 enabled = true

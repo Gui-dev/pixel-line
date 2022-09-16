@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://resources/floor_decoration.tres" type="TileSet" id=1]
 [ext_resource path="res://resources/floor.tres" type="TileSet" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://scenes/bunny/bunny.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/bunny/weapon.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/bug/orange_bug.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/bug/blue_bee.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/bug/yellow_bee.tscn" type="PackedScene" id=9]
 
 [node name="Level" type="Node"]
 
@@ -46,3 +48,9 @@ position = Vector2( 467, 200 )
 
 [node name="OrangeBug2" parent="enemies" instance=ExtResource( 7 )]
 position = Vector2( 117, 200 )
+
+[node name="BlueBee" parent="enemies" instance=ExtResource( 8 )]
+position = Vector2( 233, 144 )
+
+[node name="YellowBee" parent="enemies" instance=ExtResource( 9 )]
+position = Vector2( 475, 95 )

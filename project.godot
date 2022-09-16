@@ -34,6 +34,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/management/game_over.gd"
 }, {
+"base": "Control",
+"class": "Menu",
+"language": "GDScript",
+"path": "res://scripts/management/menu.gd"
+}, {
 "base": "Area2D",
 "class": "Projectile",
 "language": "GDScript",
@@ -50,6 +55,7 @@ _global_script_class_icons={
 "Bunny": "",
 "Effect": "",
 "GameOver": "",
+"Menu": "",
 "Projectile": "",
 "Weapon": ""
 }
@@ -57,7 +63,7 @@ _global_script_class_icons={
 [application]
 
 config/name="pixel-line"
-run/main_scene="res://scenes/management/level.tscn"
+run/main_scene="res://scenes/management/menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]

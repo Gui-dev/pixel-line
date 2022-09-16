@@ -84,7 +84,7 @@ func update_health(body: Bug) -> void:
     
     if health <= 0:
       spawn_effect(death_effect)
-      queue_free()
+      var _reload = get_tree().change_scene("res://scenes/management/game_over.tscn")
     else:
       spawn_effect(hit_effect)
 

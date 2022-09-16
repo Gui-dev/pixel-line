@@ -43,3 +43,6 @@ position = Vector2( 187, 170 )
 
 [node name="OrangeBug" parent="enemies" instance=ExtResource( 7 )]
 position = Vector2( 467, 200 )
+
+[node name="OrangeBug2" parent="enemies" instance=ExtResource( 7 )]
+position = Vector2( 117, 200 )
